@@ -3,12 +3,12 @@ import './tab.css';
 
 const Tab = props => {
   let {tabname, activetab, cardindex, onClick} = props, isActive;
-        if (activetab === cardindex) {
-          isActive = ' active';
-        }
-        else {
-          isActive = '';
-        };
+  if (activetab === cardindex) {
+    isActive = ' active';
+  }
+  else {
+    isActive = '';
+  };
 
   // Definerer og rendrer formen på en tab
   return (
