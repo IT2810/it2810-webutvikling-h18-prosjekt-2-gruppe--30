@@ -3,6 +3,8 @@ import './tab.css';
 
 const Tab = props => {
   let {tabname, activetab, cardindex, onClick} = props, isActive;
+
+  // Når activetab og cardindex er like, settes isActive til .tab.active
   if (activetab === cardindex) {
     isActive = ' active';
   }

@@ -49,6 +49,7 @@ class Tabs extends React.Component {
               className = '';
             };
 
+            // Endrer isActive, så riktig css class blir brukt
             let isActive;
             if (i === activetab) {
                 isActive = ' active';
@@ -72,7 +73,7 @@ class Tabs extends React.Component {
     );
   }
 
-  // Håndterer click på en tab og viser riktig aktive child (render metoden)
+  // Håndterer click på en tab og viser riktig aktive
   onTabClick(activetab) {
     this.setState({
       activetab
