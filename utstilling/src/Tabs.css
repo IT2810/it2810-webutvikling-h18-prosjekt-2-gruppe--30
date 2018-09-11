@@ -10,7 +10,7 @@
   padding: 1.3rem;
 }
 
-.card-content {
+.panel-content {
   display: flex;
   flex: 1;
 
@@ -18,7 +18,7 @@
   font-size: 1.6rem;
 }
 
-.card {
+.panel {
   flex: 1 0 auto;
 
   padding: 1.3rem;
@@ -38,6 +38,6 @@
   to {opacity: 1;}
 }
 
-.card.active { /* Gjør innholdet synlig */
+.panel.active { /* Gjør innholdet synlig */
   display: block !important;
 }

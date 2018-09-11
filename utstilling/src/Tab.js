@@ -2,10 +2,10 @@ import React from 'react';
 import './tab.css';
 
 const Tab = props => {
-  let {tabname, activetab, cardindex, onClick} = props, isActive;
+  let {tabname, activetab, tabindex, onClick} = props, isActive;
 
-  // Når activetab og cardindex er like, settes isActive til .tab.active
-  if (activetab === cardindex) {
+  // Når activetab og tabindex er like, settes isActive til .tab.active
+  if (activetab === tabindex) {
     isActive = ' active';
   }
   else {
