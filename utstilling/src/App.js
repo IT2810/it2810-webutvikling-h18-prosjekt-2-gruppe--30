@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
+import MediaList from './MediaList.js'
 import Title from "./Title";
 import Tabs from './Tabs';
 
 class App extends Component {
+
   render() {
 	return (
 	  <div className="App">
@@ -22,6 +24,7 @@ class App extends Component {
 			Dette er bilde 4
 		  </div>
 		</Tabs>
+    <MediaList/>
 	  </div>
 	);
   }
