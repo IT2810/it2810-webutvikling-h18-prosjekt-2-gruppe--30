@@ -1,5 +1,5 @@
 import React from 'react';
-import './tab.css';
+import '../Styles/tab.css';
 
 const Tab = props => {
   let {tabname, activetab, tabindex, onClick} = props, isActive;

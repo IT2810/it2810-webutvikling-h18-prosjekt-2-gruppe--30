@@ -1,7 +1,7 @@
 import React from 'react';
 import Tab from './Tab';
 
-import './Tabs.css';
+import '../Styles/Tabs.css';
 
 class Tabs extends React.Component {
   // Setter opp defaultProps:

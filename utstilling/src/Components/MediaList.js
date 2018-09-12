@@ -1,5 +1,5 @@
 import React from 'react';
-import  './MediaList.css';
+import '../Styles/MediaList.css';
 
 
 class MediaList extends React.Component {
