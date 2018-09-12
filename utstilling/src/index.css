@@ -1,5 +1,10 @@
+html {
+  font-size: 62.5%; /* Setter font-size til 62.5% av default size */
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
 }
