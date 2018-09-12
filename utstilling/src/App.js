@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import MediaList from './MediaList.js'
-import Title from "./Title";
-import Tabs from './Tabs';
+import MediaList from './Components/MediaList';
+import Title from "./Components/Title";
+import Tabs from './Components/Tabs';
 
 class App extends Component {
 
