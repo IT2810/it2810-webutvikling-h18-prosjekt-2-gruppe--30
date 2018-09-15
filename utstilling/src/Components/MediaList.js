@@ -77,7 +77,7 @@ class MediaList extends React.Component {
       <h4>Tekst</h4>
       <div>
       <label className="button">
-        <input type="radio" value="dikt" checked={this.state.selectedText === "dikt"}
+        <input type="radio" value="poem" checked={this.state.selectedText === "dikt"}
         onChange={this.handleChangeText}/>
         Dikt
       </label>
@@ -86,15 +86,15 @@ class MediaList extends React.Component {
      <div>
 
       <label className="button">
-        <input type="radio" value="dumme inspirational quotes" checked={this.state.selectedText === "dumme inspirational quotes"}
+        <input type="radio" value="gibberish" checked={this.state.selectedText === "dumme inspirational quotes"}
         onChange={this.handleChangeText}/>
-        Dumme Inspirational Quotes
+        Svada
       </label>
     </div>
 
     <div>
       <label className="button">
-        <input type="radio" value="sitater" checked={this.state.selectedText === "sitater"}
+        <input type="radio" value="quote" checked={this.state.selectedText === "sitater"}
         onChange={this.handleChangeText}/>
         Sitater
       </label>
