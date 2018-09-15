@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 
 
 class LoadSound extends React.Component {
@@ -64,12 +65,29 @@ class LoadSound extends React.Component {
         break;
       default:
         break;
+=======
+import './Sound/seagull.mp3';
+
+
+class LoadSound extends React.Component {
+  constructor() {
+    super();
+    this.state = {selectedSound: "seagull"}
+    this.playAudio = () => {
+      switch(this.state.selectedSound) {
+        case "seagull":
+          this.seagull.play();
+        default:
+          this.seagull.play();
+      }
+>>>>>>> add playing sound
     }
   }
 
   render() {
     return (
       <div>
+<<<<<<< HEAD
         <audio ref={(one) => {this.one = one;}}>
           <source src='../sounds/music/1.mp3' type="audio/mpeg" ></source>
         </audio>
@@ -107,6 +125,12 @@ class LoadSound extends React.Component {
           <source src='../sounds/animals/4.mp3' type="audio/mpeg" ></source>
         </audio>
         <button className="btn btn-info" onClick={this.playSound}>Play sound</button>
+=======
+        <audio ref={(seagull) => {this.seagull = seagull;}}>
+          <source src='../sounds/music/1.mp3' type="audio/mpeg" ></source>
+        </audio>
+        <button className="btn btn-info" onClick={this.playAudio}>test sound</button>
+>>>>>>> add playing sound
       </div>
 
     )
