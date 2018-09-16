@@ -6,10 +6,6 @@ import Tabs from './Components/Tabs';
 import FetchText from './Components/FetchText';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.onChange = this.onChange.bind(this);
-  }
 
   // Algoritme kilde: https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100
   distinct() {
@@ -20,10 +16,6 @@ class App extends Component {
       indexArr[indexArr.length] = randomnumber;
     };
     return indexArr;
-  }
-
-  onChange() {
-    console.log("test");
   }
 
   render() {
@@ -50,7 +42,7 @@ class App extends Component {
   		</Tabs>
       <MediaList>
         <label>
-          <input onChange={this.onChange}/>
+          <input/>
         </label>
       </MediaList>
 	  </div>

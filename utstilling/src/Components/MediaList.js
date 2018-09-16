@@ -5,7 +5,7 @@ import '../Styles/MediaList.css';
 class MediaList extends React.Component {
   constructor () {
     super();
-    this.state = {selectedSound: "dyrelyder", selectedImage: "abstrakt", selectedText: "dikt"}
+    this.state = {selectedSound: "dyrelyder", selectedImage: "abstrakt", selectedText: "poem"}
     this.handleChangeSound = this.handleChangeSound.bind(this);
     this.handleChangeImage = this.handleChangeImage.bind(this);
     this.handleChangeText = this.handleChangeText.bind(this);
@@ -77,7 +77,7 @@ class MediaList extends React.Component {
       <h4>Tekst</h4>
       <div>
       <label className="button">
-        <input type="radio" value="poem" checked={this.state.selectedText === "dikt"}
+        <input type="radio" value="poem" checked={this.state.selectedText === "poem"}
         onChange={this.handleChangeText}/>
         Dikt
       </label>
@@ -86,7 +86,7 @@ class MediaList extends React.Component {
      <div>
 
       <label className="button">
-        <input type="radio" value="gibberish" checked={this.state.selectedText === "dumme inspirational quotes"}
+        <input type="radio" value="gibberish" checked={this.state.selectedText === "gibberish"}
         onChange={this.handleChangeText}/>
         Svada
       </label>
@@ -94,7 +94,7 @@ class MediaList extends React.Component {
 
     <div>
       <label className="button">
-        <input type="radio" value="quote" checked={this.state.selectedText === "sitater"}
+        <input type="radio" value="quote" checked={this.state.selectedText === "quote"}
         onChange={this.handleChangeText}/>
         Sitater
       </label>
