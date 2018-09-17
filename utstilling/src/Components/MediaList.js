@@ -3,9 +3,9 @@ import '../Styles/MediaList.css';
 
 
 class MediaList extends React.Component {
-  constructor () {
-    super();
-    this.state = {selectedSound: "dyrelyder", selectedImage: "abstrakt", selectedText: "poem"}
+  constructor (props) {
+    super(props);
+    this.state = {selectedSound: "", selectedImage: "", selectedText: ""}
     this.handleChangeSound = this.handleChangeSound.bind(this);
     this.handleChangeImage = this.handleChangeImage.bind(this);
     this.handleChangeText = this.handleChangeText.bind(this);
@@ -13,12 +13,15 @@ class MediaList extends React.Component {
 
   handleChangeSound(event) {
     this.setState({selectedSound: event.target.value});
+    this.props.selectSoundCat(event.target.value);
   }
   handleChangeImage(event) {
     this.setState({selectedImage: event.target.value});
+    this.props.selectImgCat(event.target.value);
   }
   handleChangeText(event){
     this.setState({selectedText: event.target.value});
+    this.props.selectTxtCat(event.target.value);
   }
 
   render() {

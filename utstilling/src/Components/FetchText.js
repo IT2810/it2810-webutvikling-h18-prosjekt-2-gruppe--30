@@ -1,16 +1,15 @@
 import React from 'react';
 
-//import MediaList from './MediaList';
-
 import '../Styles/FetchText.css';
 
 class FetchText extends React.Component {
   state = {
     texts: [],
-    error: null
+    error: null,
+    prevProps: this.props.path
   }
 
-  componentDidMount() {
+  fetchText = () => {
     fetch(`../Text/${this.props.path}/${this.props.path}_${this.props.fileindex}.json`)
       .then(response => response.json())
       .then(data =>
@@ -19,6 +18,17 @@ class FetchText extends React.Component {
         })
       )
       .catch(error => this.setState({error}));
+  }
+
+  componentDidMount() {
+    this.fetchText();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.path !== prevProps.path) {
+      console.log(this.props.path, prevProps.path);
+      this.fetchText();
+    }
   }
 
   render() {
