@@ -4,6 +4,7 @@ import MediaList from './Components/MediaList';
 import Title from "./Components/Title";
 import Tabs from './Components/Tabs';
 import FetchText from './Components/FetchText';
+import FetchImage from "./Components/FetchImage";
 
 class App extends Component {
   constructor(props) {
@@ -54,23 +55,27 @@ class App extends Component {
 
   render() {
     const textArr = this.distinct();
-    //const imageArr = this.distinct();
+    const imageArr = this.distinct();
 
 	return (
 	  <div className="App">
 		  <Title/>
   		<Tabs>
   		  <div tabname="Bilde 1">
-          <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+              <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
+              <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
   		  </div>
   		  <div tabname="Bilde 2">
-          <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+              <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
+              <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
   		  </div>
   		  <div tabname="Bilde 3">
-          <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+              <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
+              <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
   		  </div>
   		  <div tabname="Bilde 4">
-          <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+              <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
+              <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
   		  </div>
   		</Tabs>
       <MediaList selectImgCat={this.selectImgCat} selectTxtCat={this.selectTxtCat} selectSoundCat={this.selectSoundCat}/>

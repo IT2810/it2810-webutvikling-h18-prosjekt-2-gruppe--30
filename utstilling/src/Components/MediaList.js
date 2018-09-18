@@ -61,7 +61,7 @@ class MediaList extends React.Component {
 
      <div>
       <label className="button">
-        <input type="radio" value="Emojier" checked={this.state.selectedImage === "Emojier"}
+        <input type="radio" value="emoji" checked={this.state.selectedImage === "emoji"}
         onChange={this.handleChangeImage}/>
         Emojier
       </label>
@@ -69,7 +69,7 @@ class MediaList extends React.Component {
 
     <div>
       <label className="button">
-        <input type="radio" value="kommunevåpen" checked={this.state.selectedImage === "kommunevåpen"}
+        <input type="radio" value="kommunevapen" checked={this.state.selectedImage === "kommunevapen"}
         onChange={this.handleChangeImage}/>
         Kommunevåpen
       </label>
