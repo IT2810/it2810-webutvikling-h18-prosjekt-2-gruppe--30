@@ -28,7 +28,6 @@ class FetchText extends React.Component {
   // Sjekker etter prop endring og fetcher på nytt om endring
   componentDidUpdate(prevProps) {
     if (this.props.path !== prevProps.path) {
-      console.log(this.props.path, prevProps.path);
       this.fetchText();
     }
   }

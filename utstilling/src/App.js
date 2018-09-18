@@ -5,6 +5,7 @@ import Title from "./Components/Title";
 import Tabs from './Components/Tabs';
 import FetchText from './Components/FetchText';
 import LoadSound from './Components/LoadSound';
+import FetchImage from "./Components/FetchImage";
 
 class App extends Component {
   constructor(props) {
@@ -25,7 +26,6 @@ class App extends Component {
     this.loadSound2.pauseSound();
     this.loadSound3.pauseSound();
     this.loadSound4.pauseSound();
-    console.log('YO');
   }
 
   // Lager en liste med 4 distinkte tall fra 1-4
@@ -88,28 +88,30 @@ class App extends Component {
 
   render() {
     const textArr = this.distinct();
-    //const imageArr = this.distinct();
     const soundArr = this.randomizeSound();
-    console.log(this.categorySound);
-    console.log(soundArr);
+    const imageArr = this.distinct();
 
 	return (
 	  <div className="App">
 		  <Title/>
   		<Tabs pauseOnChange = {this.pauseOnChange}>
   		  <div tabname="Bilde 1">
+          <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
           <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
           <LoadSound ref={(ls1) => this.loadSound1 = ls1} caseindex={soundArr.pop()}/>
   		  </div>
   		  <div tabname="Bilde 2">
+          <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
           <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
           <LoadSound ref={(ls2) => this.loadSound2 = ls2} caseindex={soundArr.pop()}/>
   		  </div>
   		  <div tabname="Bilde 3">
+          <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
           <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
           <LoadSound ref={(ls3) => this.loadSound3 = ls3} caseindex={soundArr.pop()}/>
   		  </div>
   		  <div tabname="Bilde 4">
+          <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
           <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
           <LoadSound ref={(ls4) => this.loadSound4 = ls4} caseindex={soundArr.pop()}/>
   		  </div>
