@@ -60,25 +60,31 @@ class App extends Component {
 	return (
 	  <div className="App">
 		  <Title/>
-  		<Tabs>
-  		  <div tabname="Bilde 1">
-              <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
-              <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
-  		  </div>
-  		  <div tabname="Bilde 2">
-              <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
-              <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
-  		  </div>
-  		  <div tabname="Bilde 3">
-              <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
-              <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
-  		  </div>
-  		  <div tabname="Bilde 4">
-              <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
-              <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
-  		  </div>
-  		</Tabs>
-      <MediaList selectImgCat={this.selectImgCat} selectTxtCat={this.selectTxtCat} selectSoundCat={this.selectSoundCat}/>
+      <div className="grid grid-float flex-grid">
+        <div className="box-1">
+          <MediaList selectImgCat={this.selectImgCat} selectTxtCat={this.selectTxtCat} selectSoundCat={this.selectSoundCat}/>
+        </div>
+        <div className="box-2">
+          <Tabs>
+      		  <div tabname="Bilde 1">
+                  <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
+                  <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+      		  </div>
+      		  <div tabname="Bilde 2">
+                  <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
+                  <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+      		  </div>
+      		  <div tabname="Bilde 3">
+                  <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
+                  <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+      		  </div>
+      		  <div tabname="Bilde 4">
+                  <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
+                  <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+      		  </div>
+      		</Tabs>
+        </div>
+      </div>
 	  </div>
 	);
   }
