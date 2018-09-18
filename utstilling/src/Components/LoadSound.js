@@ -4,28 +4,32 @@ import React from 'react';
 class LoadSound extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {selectedSound: 0}
+    this.state = {selectedSound: 0, prevProps: 0}
     this.playSound = this.playSound.bind(this);
+    this.pauseSound = this.pauseSound.bind(this);
     this.render = this.render.bind(this);
-    this.componentDidMount = this.componentDidMount.bind(this);
+    this.componentDidUpdate = this.componentDidUpdate.bind(this);
   }
 
   //The state selectedSound is based on a prop received from App
   //TODO Probably does not work more than first render
-  componentDidMount() {
-    this.setState({
-      selectedSound: this.props.caseindex
-    })
+
+
+  componentDidUpdate(prevProps) {
+    if (this.props.caseindex !== prevProps.caseindex) {
+      this.setState({selectedSound: this.props.caseindex,
+        prevProps: this.props.caseindex})
+    }
   }
 
 
   //Function triggered by button.
   //Plays a sound file based on the state selectedSound.
   playSound() {
-
-    console.log(this.props.caseindex);
-    console.log(this.state);
+    console.log("Current Sound:");
     console.log(this.state.selectedSound);
+    console.log("caseindex");
+    console.log(this.props.caseindex);
     switch(this.state.selectedSound) {
       case 1:
         this.one.play();
@@ -68,9 +72,53 @@ class LoadSound extends React.Component {
     }
   }
 
+  pauseSound() {
+    switch(this.state.selectedSound) {
+      case 1:
+        this.one.pause();
+        break;
+      case 2:
+        this.two.pause();
+        break;
+      case 3:
+        this.three.pause();
+        break;
+      case 4:
+        this.four.pause();
+        break;
+      case 5:
+        this.five.pause();
+        break;
+      case 6:
+        this.six.pause();
+        break;
+      case 7:
+        this.seven.pause();
+        break;
+      case 8:
+        this.eight.pause();
+        break;
+      case 9:
+        this.nine.pause();
+        break;
+      case 10:
+        this.ten.pause();
+        break;
+      case 11:
+        this.eleven.pause();
+        break;
+      case 12:
+        this.twelve.pause();
+        break;
+      default:
+        break;
+    }
+  }
+
+
   render() {
     return (
-      <div>
+      <div ref={(childLoadSound) => {this.childLoadSound = childLoadSound}}>
         <audio ref={(one) => {this.one = one;}}>
           <source src='../sounds/music/1.mp3' type="audio/mpeg" ></source>
         </audio>
@@ -104,10 +152,11 @@ class LoadSound extends React.Component {
         <audio ref={(eleven) => {this.eleven = eleven;}}>
           <source src='../sounds/animals/3.mp3' type="audio/mpeg" ></source>
         </audio>
-        <audio ref={(twelve) => {this.tweleve = twelve;}}>
+        <audio ref={(twelve) => {this.twelve = twelve;}}>
           <source src='../sounds/animals/4.mp3' type="audio/mpeg" ></source>
         </audio>
         <button className="btn btn-info" onClick={this.playSound}>Play sound</button>
+        <button className="btn btn-pause" onClick={this.pauseSound}>Pause sound</button>
       </div>
 
     )
