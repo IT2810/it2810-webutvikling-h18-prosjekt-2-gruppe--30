@@ -10,12 +10,16 @@ class LoadSound extends React.Component {
     this.componentDidMount = this.componentDidMount.bind(this);
   }
 
+  //The state selectedSound is based on a prop received from App
+  //TODO Probably does not work more than first render
   componentDidMount() {
     this.setState({
       selectedSound: this.props.caseindex
     })
   }
 
+  //Function triggered by button.
+  //Plays a sound file based on the state selectedSound.
   playSound() {
 
     console.log(this.props.caseindex);
@@ -102,7 +106,7 @@ class LoadSound extends React.Component {
         <audio ref={(twelve) => {this.tweleve = twelve;}}>
           <source src='../sounds/animals/4.mp3' type="audio/mpeg" ></source>
         </audio>
-        <button className="btn btn-info" onClick={this.playSound}>test sound</button>
+        <button className="btn btn-info" onClick={this.playSound}>Play sound</button>
       </div>
 
     )
