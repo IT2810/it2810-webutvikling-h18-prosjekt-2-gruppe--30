@@ -6,17 +6,28 @@ class FetchImage extends React.Component {
     state = {
         isLoading: true,
         imageText: '',
-        error: null
+        error: null,
+        prevProps: this.props.path
     };
 
-    componentDidMount() {
-        fetch(`../Image/${this.props.path}/image_${this.props.fileindex}.svg`)
+    fetchImage() {
+        fetch(`../Image/${this.props.path}/${this.props.path}_${this.props.fileindex}.svg`)
             .then(response => response.text())
             .then(svg => this.setState({
                 imageText: svg,
                 isLoading: false
             }))
             .catch(error => this.setState({error, isLoading: false}));
+    }
+
+    componentDidMount() {
+        this.fetchImage();
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.path !== prevProps.path){
+            this.fetchImage();
+        }
     }
 
     render() {
