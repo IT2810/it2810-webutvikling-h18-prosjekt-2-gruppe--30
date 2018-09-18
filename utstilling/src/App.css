@@ -2,6 +2,50 @@
     text-align: center;
 }
 
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.grid {
+  padding: 1.3rem;
+}
+
+.grid-float:after {
+	display: table;
+	clear: both;
+}
+
+.grid-float > * {
+	float: left;
+}
+
+.flex-grid {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.box-1 {
+  width: auto;
+}
+
+.box-2 {
+  width: 80%;
+}
+
+@media only screen and (max-width: 992px) {
+  .grid {
+    display: block;
+  }
+
+  .grid > * {
+    width: 100%;
+    margin-bottom: 1.3rem;
+  }
+}
+
 .App-title {
     background-color: #222;
     padding: 2rem;
