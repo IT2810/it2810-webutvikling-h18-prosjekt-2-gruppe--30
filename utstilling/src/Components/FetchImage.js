@@ -31,12 +31,9 @@ class FetchImage extends React.Component {
     }
 
     render() {
-        const {isLoading, imageText, error} = this.state;
+        const {isLoading, imageText} = this.state;
         return (
             <React.Fragment>
-                {/* Display a message if we encounter an error */}
-                {error ? <p>{error.message}</p> : null}
-
                 {/* Here's our data check */}
                 {!isLoading ? (
                     <div className="imageWrapper" dangerouslySetInnerHTML={{__html: imageText}}/>
