@@ -14,6 +14,7 @@ class MediaList extends React.Component {
   handleChangeSound(event) {
     this.setState({selectedSound: event.target.value});
     this.props.selectSoundCat(event.target.value);
+    this.props.pauseOnChange();
   }
   handleChangeImage(event) {
     this.setState({selectedImage: event.target.value});
@@ -30,19 +31,19 @@ class MediaList extends React.Component {
     <form className="categorySound">
       <h4>Lyder</h4>
         <label className="button">
-          <input type="radio" value="dyrelyder" checked={this.state.selectedSound === "dyrelyder"}
+          <input type="radio" value="animals" checked={this.state.selectedSound === "animals"}
           onChange={this.handleChangeSound}/>
           Dyrelyder
         </label>
 
         <label className="button">
-          <input type="radio" value="musikk" checked={this.state.selectedSound === "musikk"}
+          <input type="radio" value="music" checked={this.state.selectedSound === "music"}
           onChange={this.handleChangeSound}/>
           Musikk
         </label>
 
       <label className="button">
-        <input type="radio" value="film" checked={this.state.selectedSound === "film"}
+        <input type="radio" value="movies" checked={this.state.selectedSound === "movies"}
         onChange={this.handleChangeSound}/>
         Film
       </label>
