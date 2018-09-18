@@ -13,10 +13,13 @@ class App extends Component {
     this.selectSoundCat = this.selectSoundCat.bind(this);
 
     this.state = {
-      categoryTxt: ''
+      categoryTxt: '',
+      categorySound: '',
+      categoryImg: ''
     }
   }
 
+  // Lager en liste med 4 distinkte tall fra 1-4
   // Algoritme kilde: https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100
   distinct() {
     let indexArr = [];
@@ -28,27 +31,30 @@ class App extends Component {
     return indexArr;
   }
 
+  // Setter categoryImg state = category som er verdien sendt fra radio-knapp
   selectImgCat(category) {
-    this.categoryImg = category;
+    this.setState({
+      categoryImg: category
+    })
   }
 
+  // Setter categoryTxt state = category som er verdien sendt fra radio-knapp
   selectTxtCat(category) {
-    //this.categoryTxt = category;
     this.setState({
       categoryTxt: category
     })
-    console.log(this.state.category);
   }
 
+  // Setter categorySound state = category som er verdien sendt fra radio-knapp
   selectSoundCat(category) {
-    this.categorySound = category;
+    this.setState({
+      categorySound: category
+    })
   }
 
   render() {
     const textArr = this.distinct();
-    //const soundArr = this.distinct();
     //const imageArr = this.distinct();
-    //console.log(this.state.category);
 
 	return (
 	  <div className="App">

@@ -9,6 +9,7 @@ class FetchText extends React.Component {
     prevProps: this.props.path
   }
 
+  // Fetcher texten fra gitt path
   fetchText = () => {
     fetch(`../Text/${this.props.path}/${this.props.path}_${this.props.fileindex}.json`)
       .then(response => response.json())
@@ -24,6 +25,7 @@ class FetchText extends React.Component {
     this.fetchText();
   }
 
+  // Sjekker etter prop endring og fetcher på nytt om endring
   componentDidUpdate(prevProps) {
     if (this.props.path !== prevProps.path) {
       console.log(this.props.path, prevProps.path);
@@ -32,12 +34,10 @@ class FetchText extends React.Component {
   }
 
   render() {
-    const {texts, error} = this.state;
+    const {texts} = this.state;
 
     return (
       <React.Fragment>
-        {error ? <p>Error: {error.message}</p> : null}
-
         {(
           texts.map(txt => {
             const {id, text, credit} = txt;
