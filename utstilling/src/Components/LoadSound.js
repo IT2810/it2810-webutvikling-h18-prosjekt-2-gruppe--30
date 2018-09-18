@@ -1,5 +1,6 @@
 import React from 'react';
 
+import '../Styles/LoadSound.css';
 
 class LoadSound extends React.Component {
   constructor(props) {
@@ -26,10 +27,6 @@ class LoadSound extends React.Component {
   //Function triggered by button.
   //Plays a sound file based on the state selectedSound.
   playSound() {
-    console.log("Current Sound:");
-    console.log(this.state.selectedSound);
-    console.log("caseindex");
-    console.log(this.props.caseindex);
     switch(this.state.selectedSound) {
       case 1:
         this.one.play();
@@ -118,7 +115,7 @@ class LoadSound extends React.Component {
 
   render() {
     return (
-      <div ref={(childLoadSound) => {this.childLoadSound = childLoadSound}}>
+      <div className="soundWrapper" ref={(childLoadSound) => {this.childLoadSound = childLoadSound}}>
         <audio ref={(one) => {this.one = one;}}>
           <source src='../sounds/music/1.mp3' type="audio/mpeg" ></source>
         </audio>
@@ -155,14 +152,11 @@ class LoadSound extends React.Component {
         <audio ref={(twelve) => {this.twelve = twelve;}}>
           <source src='../sounds/animals/4.mp3' type="audio/mpeg" ></source>
         </audio>
-        <button className="btn btn-info" onClick={this.playSound}>Play sound</button>
-        <button className="btn btn-pause" onClick={this.pauseSound}>Pause sound</button>
+        <button className="soundButton" onClick={this.playSound}>Play sound</button>
+        <button className="soundButton" onClick={this.pauseSound}>Pause sound</button>
       </div>
-
     )
   }
-
-
 }
 
 export default LoadSound

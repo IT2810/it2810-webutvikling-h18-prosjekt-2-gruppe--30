@@ -28,9 +28,9 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     svg {
-        width: 45rem;
+        width: 40rem;
         max-height: 50rem;
-        margin-right: 3rem;
+        margin: 2rem;
     }
 }
 
@@ -39,6 +39,6 @@
     svg {
         width: 50rem;
         max-height: 50rem;
-        margin-right: 5rem;
+        margin: 4rem;
     }
 }
