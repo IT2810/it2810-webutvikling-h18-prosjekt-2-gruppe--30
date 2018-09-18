@@ -25,7 +25,8 @@ class Tabs extends React.Component {
       // Lager tab konteineren og card konteineren som tab-panel
       // {...this.props} = ES6 Spread operator
       // `string text ${expression}` = ES6 Template literals (Template strings)
-      <div {...this.props} className={`tab-panel`}>
+      //TODO <div {...this.props} className={`tab-panel`}>
+      <div className={`tab-panel`}>
         <div className="tab-list">
           {React.Children.map(this.props.children, (child, i) => (
             <Tab onClick={this.onTabClick.bind(this, i)} {...child.props} tabindex={i} activetab={activetab}/>
@@ -63,6 +64,7 @@ class Tabs extends React.Component {
     this.setState({
       activetab
     });
+    this.props.pauseOnChange();
   }
 }
 

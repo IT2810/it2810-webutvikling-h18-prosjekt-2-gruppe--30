@@ -4,6 +4,7 @@ import MediaList from './Components/MediaList';
 import Title from "./Components/Title";
 import Tabs from './Components/Tabs';
 import FetchText from './Components/FetchText';
+import LoadSound from './Components/LoadSound';
 import FetchImage from "./Components/FetchImage";
 
 class App extends Component {
@@ -20,6 +21,13 @@ class App extends Component {
     }
   }
 
+  pauseOnChange = () => {
+    this.loadSound1.pauseSound();
+    this.loadSound2.pauseSound();
+    this.loadSound3.pauseSound();
+    this.loadSound4.pauseSound();
+  }
+
   // Lager en liste med 4 distinkte tall fra 1-4
   // Algoritme kilde: https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100
   distinct() {
@@ -30,6 +38,30 @@ class App extends Component {
       indexArr[indexArr.length] = randomnumber;
     };
     return indexArr;
+  }
+
+  //Creates a list of four numbers in correct interval based on music category
+  //This is because LoadSound needs a number between 1 and 12.
+  randomizeSound() {
+    let indexArr = this.distinct();
+    let returnArr = []
+    let increment = 0;
+    switch (this.state.categorySound) {
+      default:
+        console.log("ERROR: No valid category");
+      case "music":
+        break;
+      case "movies":
+        increment = 4;
+        break;
+      case "animals":
+        increment = 8;
+        break;
+    }
+    while(returnArr.length < 4){
+      returnArr[returnArr.length] = indexArr.pop() + increment;
+    }
+    return returnArr;
   }
 
   // Setter categoryImg state = category som er verdien sendt fra radio-knapp
@@ -53,8 +85,10 @@ class App extends Component {
     })
   }
 
+
   render() {
     const textArr = this.distinct();
+    const soundArr = this.randomizeSound();
     const imageArr = this.distinct();
 
 	return (
@@ -65,22 +99,26 @@ class App extends Component {
           <MediaList selectImgCat={this.selectImgCat} selectTxtCat={this.selectTxtCat} selectSoundCat={this.selectSoundCat}/>
         </div>
         <div className="box-2">
-          <Tabs>
+          <Tabs pauseOnChange = {this.pauseOnChange}>
       		  <div tabname="Bilde 1">
                   <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
                   <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+                  <LoadSound ref={(ls1) => this.loadSound1 = ls1} caseindex={soundArr.pop()}/>
       		  </div>
       		  <div tabname="Bilde 2">
                   <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
                   <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+                  <LoadSound ref={(ls2) => this.loadSound2 = ls2} caseindex={soundArr.pop()}/>
       		  </div>
       		  <div tabname="Bilde 3">
                   <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
                   <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+                   <LoadSound ref={(ls3) => this.loadSound3 = ls3} caseindex={soundArr.pop()}/>
       		  </div>
       		  <div tabname="Bilde 4">
                   <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
                   <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+                  <LoadSound ref={(ls4) => this.loadSound4 = ls4} caseindex={soundArr.pop()}/>
       		  </div>
       		</Tabs>
         </div>
