@@ -1,0 +1,16 @@
+/*To make page fit with the smallest phones like iphone 5 */
+@media only screen and (max-width: 350px){
+    .Tab-wrapper {
+        width: 25rem;
+    }
+}
+
+/* Bruker grid for skjermer større enn 992px */
+@media only screen and (min-width: 992px) {
+    .Tab-wrapper {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        justify-content: center;
+    }
+}
