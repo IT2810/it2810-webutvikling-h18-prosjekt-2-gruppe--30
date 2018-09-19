@@ -64,19 +64,9 @@
     }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up)*/
+/* Small devices (portrait tablets and large phones, 600px and up to 768px)*/
 @media only screen and (min-width: 600px) and (max-width: 768px) {
     .App-title{
         font-size: 5vw;
-    }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 992px) {
-    .Tab-wrapper {
-        display: grid;
-        grid-template-columns: auto auto;
-        align-items: center;
-        justify-content: center;
     }
 }
