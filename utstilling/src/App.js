@@ -49,6 +49,7 @@ class App extends Component {
     switch (this.state.categorySound) {
       default:
         console.log("ERROR: No valid category");
+        break;
       case "music":
         break;
       case "movies":
@@ -87,44 +88,53 @@ class App extends Component {
 
 
   render() {
-    const textArr = this.distinct();
-    const soundArr = this.randomizeSound();
-    const imageArr = this.distinct();
+      const textArr = this.distinct();
+      const soundArr = this.randomizeSound();
+      const imageArr = this.distinct();
 
-	return (
-	  <div className="App">
-		  <Title/>
-      <div className="grid grid-float flex-grid">
-        <div className="box-1">
-          <MediaList selectImgCat={this.selectImgCat} selectTxtCat={this.selectTxtCat} selectSoundCat={this.selectSoundCat}/>
-        </div>
-        <div className="box-2">
-          <Tabs pauseOnChange = {this.pauseOnChange}>
-      		  <div tabname="Bilde 1">
-                  <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
-                  <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
-                  <LoadSound ref={(ls1) => this.loadSound1 = ls1} caseindex={soundArr.pop()}/>
-      		  </div>
-      		  <div tabname="Bilde 2">
-                  <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
-                  <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
-                  <LoadSound ref={(ls2) => this.loadSound2 = ls2} caseindex={soundArr.pop()}/>
-      		  </div>
-      		  <div tabname="Bilde 3">
-                  <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
-                  <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
-                   <LoadSound ref={(ls3) => this.loadSound3 = ls3} caseindex={soundArr.pop()}/>
-      		  </div>
-      		  <div tabname="Bilde 4">
-                  <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
-                  <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
-                  <LoadSound ref={(ls4) => this.loadSound4 = ls4} caseindex={soundArr.pop()}/>
-      		  </div>
-      		</Tabs>
-        </div>
-      </div>
-	  </div>
-	);
+      return (
+          <div className="App">
+              <Title/>
+              <div className="grid grid-float flex-grid">
+                  <div className="box-1">
+                      <MediaList selectImgCat={this.selectImgCat} selectTxtCat={this.selectTxtCat}
+                                 selectSoundCat={this.selectSoundCat} pauseOnChange={this.pauseOnChange}/>
+                  </div>
+                  <div className="box-2">
+                      <Tabs pauseOnChange={this.pauseOnChange}>
+                          <div tabname="Bilde 1">
+                              <div className={"Tab-wrapper"}>
+                                  <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
+                                  <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+                                  <LoadSound ref={(ls1) => this.loadSound1 = ls1} caseindex={soundArr.pop()}/>
+                              </div>
+                          </div>
+                          <div tabname="Bilde 2">
+                              <div className={"Tab-wrapper"}>
+                                  <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
+                                  <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+                                  <LoadSound ref={(ls2) => this.loadSound2 = ls2} caseindex={soundArr.pop()}/>
+                              </div>
+                          </div>
+                          <div tabname="Bilde 3">
+                              <div className={"Tab-wrapper"}>
+                                  <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
+                                  <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+                                  <LoadSound ref={(ls3) => this.loadSound3 = ls3} caseindex={soundArr.pop()}/>
+                              </div>
+                          </div>
+                          <div tabname="Bilde 4">
+                              <div className={"Tab-wrapper"}>
+                                  <FetchImage path={this.state.categoryImg} fileindex={imageArr.pop()}/>
+                                  <FetchText path={this.state.categoryTxt} fileindex={textArr.pop()}/>
+                                  <LoadSound ref={(ls4) => this.loadSound4 = ls4} caseindex={soundArr.pop()}/>
+                              </div>
+                          </div>
+                      </Tabs>
+                  </div>
+              </div>
+          </div>
+      );
   }
 }
 

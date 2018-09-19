@@ -1,33 +1,44 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     svg {
+        width: 90%;
+        max-height: 40rem;
+        margin-bottom: 3rem;
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 545px) {
+@media only screen and (min-width: 600px) {
     svg {
-        width: 50rem;
+        width: 40rem;
+        max-height: 50rem;
+        margin-bottom: 3rem;
     }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     svg {
-        width: 50rem;
+        width: 40rem;
+        max-height: 50rem;
+        margin-bottom: 3rem;
     }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     svg {
-        width: 55rem;
+        width: 40rem;
+        max-height: 50rem;
+        margin: 2rem;
     }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     svg {
-        width: 60rem;
+        width: 50rem;
+        max-height: 50rem;
+        margin: 4rem;
     }
 }

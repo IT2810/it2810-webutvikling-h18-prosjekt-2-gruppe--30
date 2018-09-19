@@ -1,0 +1,8 @@
+.soundButton {
+    margin: 1rem;
+}
+
+.soundWrapper {
+    grid-column: 1/span 2;
+}
+
