@@ -48,7 +48,7 @@ class App extends Component {
     let increment = 0;
     switch (this.state.categorySound) {
       default:
-        console.log("ERROR: No valid category");
+        console.log("No music category chosen");
         break;
       case "music":
         break;
