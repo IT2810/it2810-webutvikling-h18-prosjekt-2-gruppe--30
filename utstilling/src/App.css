@@ -47,11 +47,14 @@
 }
 
 .App-title {
+    text-transform: uppercase;
+    font-weight: lighter;
     background-color: #222;
     padding: 2rem;
     font-size: 4vw;
-    color: white;
+    color: #ECF0F1;
     margin: 0;
+    letter-spacing: 0.50rem;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -61,7 +64,7 @@
     }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up)*/
+/* Small devices (portrait tablets and large phones, 600px and up to 768px)*/
 @media only screen and (min-width: 600px) and (max-width: 768px) {
     .App-title{
         font-size: 5vw;

@@ -1,5 +1,5 @@
 .tab {
-  color: #494A48;
+  color: #7f8c8d;
   text-align: center;
   cursor: pointer;
   padding-left: 1rem;
@@ -8,9 +8,10 @@
 }
 
 .tab:hover {
-  color: #1E1E1D;
+  color: #222;
 }
 
 .tab.active {
-  border-bottom: 3px solid #61dbfb;
+  color: #222;
+  border-bottom: 3px solid #f39c12;
 }
