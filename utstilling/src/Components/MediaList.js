@@ -11,9 +11,12 @@ class MediaList extends React.Component {
     this.handleChangeText = this.handleChangeText.bind(this);
   };
 
+  //Functions triggered when radio buttons are clicked
+  //Ensures that the states in App.js corresponds with the selected buttons
   handleChangeSound(event) {
     this.setState({selectedSound: event.target.value});
     this.props.selectSoundCat(event.target.value);
+    //When a different sound category is selected, sound should stop playing
     this.props.pauseOnChange();
   }
   handleChangeImage(event) {
@@ -25,6 +28,8 @@ class MediaList extends React.Component {
     this.props.selectTxtCat(event.target.value);
   }
 
+  //Renders the radio buttons
+  //The value the buttons is used in the change handler to set correct state in App.js
   render() {
     return(
   <div>

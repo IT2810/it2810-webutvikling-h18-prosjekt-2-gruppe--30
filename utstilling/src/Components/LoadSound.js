@@ -13,9 +13,6 @@ class LoadSound extends React.Component {
   }
 
   //The state selectedSound is based on a prop received from App
-  //TODO Probably does not work more than first render
-
-
   componentDidUpdate(prevProps) {
     if (this.props.caseindex !== prevProps.caseindex) {
       this.setState({selectedSound: this.props.caseindex,
@@ -69,6 +66,7 @@ class LoadSound extends React.Component {
     }
   }
 
+  //Pauses sound
   pauseSound() {
     switch(this.state.selectedSound) {
       case 1:
@@ -112,7 +110,7 @@ class LoadSound extends React.Component {
     }
   }
 
-
+  //Loads all soundfiles
   render() {
     return (
       <div className="soundWrapper" ref={(childLoadSound) => {this.childLoadSound = childLoadSound}}>
