@@ -39,3 +39,6 @@ Videre vil et klikk på en ikke-valgt musikkategori føre til at musikken stanse
 ### Tab-komponenten
 
 ### Title-komponenten
+
+
+<a href="https://ibb.co/kpWY7K"><img src="https://preview.ibb.co/gy3fnK/Untitled_Diagram.jpg" alt="Untitled_Diagram" border="0"></a>
