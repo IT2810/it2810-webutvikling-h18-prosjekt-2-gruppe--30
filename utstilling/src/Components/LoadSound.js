@@ -117,40 +117,40 @@ class LoadSound extends React.Component {
     return (
       <div className="soundWrapper" ref={(childLoadSound) => {this.childLoadSound = childLoadSound}}>
         <audio ref={(one) => {this.one = one;}}>
-          <source src='../sounds/music/1.mp3' type="audio/mpeg" ></source>
+          <source src='./sounds/music/1.mp3' type="audio/mpeg" ></source>
         </audio>
         <audio ref={(two) => {this.two = two;}}>
-          <source src='../sounds/music/2.mp3' type="audio/mpeg" ></source>
+          <source src='./sounds/music/2.mp3' type="audio/mpeg" ></source>
         </audio>
         <audio ref={(three) => {this.three = three;}}>
-          <source src='../sounds/music/3.mp3' type="audio/mpeg" ></source>
+          <source src='./sounds/music/3.mp3' type="audio/mpeg" ></source>
         </audio>
         <audio ref={(four) => {this.four = four;}}>
-          <source src='../sounds/music/4.mp3' type="audio/mpeg" ></source>
+          <source src='./sounds/music/4.mp3' type="audio/mpeg" ></source>
         </audio>
         <audio ref={(five) => {this.five = five;}}>
-          <source src='../sounds/movies/1.mp3' type="audio/mpeg" ></source>
+          <source src='./sounds/movies/1.mp3' type="audio/mpeg" ></source>
         </audio>
         <audio ref={(six) => {this.six = six;}}>
-          <source src='../sounds/movies/2.mp3' type="audio/mpeg" ></source>
+          <source src='./sounds/movies/2.mp3' type="audio/mpeg" ></source>
         </audio>
         <audio ref={(seven) => {this.seven = seven;}}>
-          <source src='../sounds/movies/3.mp3' type="audio/mpeg" ></source>
+          <source src='./sounds/movies/3.mp3' type="audio/mpeg" ></source>
         </audio>
         <audio ref={(eight) => {this.eight = eight;}}>
-          <source src='../sounds/movies/4.mp3' type="audio/mpeg" ></source>
+          <source src='./sounds/movies/4.mp3' type="audio/mpeg" ></source>
         </audio>
         <audio ref={(nine) => {this.nine = nine;}}>
-          <source src='../sounds/animals/1.mp3' type="audio/mpeg" ></source>
+          <source src='./sounds/animals/1.mp3' type="audio/mpeg" ></source>
         </audio>
         <audio ref={(ten) => {this.ten = ten;}}>
-          <source src='../sounds/animals/2.mp3' type="audio/mpeg" ></source>
+          <source src='./sounds/animals/2.mp3' type="audio/mpeg" ></source>
         </audio>
         <audio ref={(eleven) => {this.eleven = eleven;}}>
-          <source src='../sounds/animals/3.mp3' type="audio/mpeg" ></source>
+          <source src='./sounds/animals/3.mp3' type="audio/mpeg" ></source>
         </audio>
         <audio ref={(twelve) => {this.twelve = twelve;}}>
-          <source src='../sounds/animals/4.mp3' type="audio/mpeg" ></source>
+          <source src='./sounds/animals/4.mp3' type="audio/mpeg" ></source>
         </audio>
         <button className="soundButton" onClick={this.playSound}>Play sound</button>
         <button className="soundButton" onClick={this.pauseSound}>Pause sound</button>

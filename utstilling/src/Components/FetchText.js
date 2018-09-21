@@ -11,7 +11,7 @@ class FetchText extends React.Component {
 
   // Fetcher texten fra gitt path
   fetchText = () => {
-    fetch(`../Text/${this.props.path}/${this.props.path}_${this.props.fileindex}.json`)
+    fetch(`./Text/${this.props.path}/${this.props.path}_${this.props.fileindex}.json`)
       .then(response => response.json())
       .then(data =>
         this.setState({
@@ -22,7 +22,10 @@ class FetchText extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchText();
+      if (this.props.path !== '') {
+          this.fetchText();
+      }
+      return;
   }
 
   // Sjekker etter prop endring og fetcher på nytt om endring

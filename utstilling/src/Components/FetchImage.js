@@ -4,24 +4,25 @@ import '../Styles/FetchImage.css';
 
 class FetchImage extends React.Component {
     state = {
-        isLoading: true,
         imageText: '',
         error: null,
         prevProps: this.props.path
     };
 
-    fetchImage() {
-        fetch(`../Image/${this.props.path}/${this.props.path}_${this.props.fileindex}.svg`)
+    fetchImage = () => {
+        fetch(`./Image/${this.props.path}/${this.props.path}_${this.props.fileindex}.svg`)
             .then(response => response.text())
             .then(svg => this.setState({
-                imageText: svg,
-                isLoading: false
+                imageText: svg
             }))
-            .catch(error => this.setState({error, isLoading: false}));
+            .catch(error => this.setState({error}));
     }
 
     componentDidMount() {
-        this.fetchImage();
+        if (this.props.path !== '') {
+            this.fetchImage();
+        }
+        return;
     }
 
     componentDidUpdate(prevProps) {
@@ -31,16 +32,10 @@ class FetchImage extends React.Component {
     }
 
     render() {
-        const {isLoading, imageText} = this.state;
+        const {imageText} = this.state;
         return (
             <React.Fragment>
-                {/* Here's our data check */}
-                {!isLoading ? (
-                    <div className="imageWrapper" dangerouslySetInnerHTML={{__html: imageText}}/>
-                ) : (
-                    // If there is a delay in data, let's let the user know it's loading
-                    <h3>Loading...</h3>
-                )}
+                <div className="imageWrapper" dangerouslySetInnerHTML={{__html: imageText}}/>
             </React.Fragment>
         );
     }
